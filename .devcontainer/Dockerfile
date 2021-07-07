@@ -32,10 +32,10 @@ RUN set -ex \
     && bash /tmp/scripts/terraform-debian.sh "${TERRAFORMVERSION}" \
     && bash /tmp/scripts/terraform-docs-debian.sh "${TERRAFORMDOCSVERSION}"
 
-# add extras
-# RUN set -ex \
-    # https://github.com/vinnie357/devcontainers/tree/main/scripts-library/ubuntu
-    # && bash /tmp/scripts/my-script.sh
+#add extras
+RUN set -ex \
+    #https://github.com/vinnie357/devcontainers/tree/main/scripts-library/ubuntu
+    && bash /tmp/scripts/node-debian.sh ${NVM_DIR} ${NODE_VERSION} ${USERNAME}
 
 # Clean up
 RUN set -ex \

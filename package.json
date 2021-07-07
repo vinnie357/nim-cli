@@ -1,0 +1,37 @@
+{
+  "name": "nim-cli",
+  "version": "0.0.1",
+  "description": "cli rest client for NGINX instance manager",
+  "main": "src/bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinnie357/nim-cli.git"
+  },
+  "keywords": [
+    "NGINX",
+    "F5",
+    "NIM"
+  ],
+  "author": "v.mazza@f5.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vinnie357/nim-cli/issues"
+  },
+  "homepage": "https://github.com/vinnie357/nim-cli#readme",
+  "bin": {
+    "nim-cli": "./src/bin/nim.js",
+    "okta-login": "./src/bin/oktaLogin.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.1.5",
+    "axios": "^0.21.1",
+    "chalk": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "open": "^8.2.1",
+    "uuid": "^8.3.2",
+    "yargs": "^17.0.1"
+  }
+}

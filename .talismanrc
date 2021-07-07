@@ -1,3 +1,9 @@
 fileignoreconfig:
 - filename: .devcontainer/scripts/docker-debian.sh
   checksum: 3109be3be53c3dad4a7cfcd0c07c87cd41ab26cc24e1fd4110fe69ecb955ae9a
+- filename: .env
+  checksum: 4428e2918cf41de6bdc8237624f41c4bc57998de81ed0a7d5d77cfc4d7090eea
+- filename: package-lock.json
+  checksum: ba911d26a01e61bbb209096628702cbeb85a477bfef6ce9826a2d4e1cd4f32bc
+- filename: .devcontainer/scripts/node-debian.sh
+  checksum: 1ad7e97cb006557ca2b1cdb1d7fd67db2e53d63e12339b8fef2eac6fff5ab2a0
