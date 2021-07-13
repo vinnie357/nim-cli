@@ -4,7 +4,9 @@
   "description": "cli rest client for NGINX instance manager",
   "main": "src/bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "getTests": "node ./src/get/tests.js",
+    "userTests": "node ./src/user/tests.js",
+    "test": "node ./src/tests.js"
   },
   "repository": {
     "type": "git",

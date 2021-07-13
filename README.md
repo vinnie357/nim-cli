@@ -29,6 +29,14 @@ Options:
                                               [boolean] [default: false]
       --tls_verify, --tls  verify tls certs    [boolean] [default: true]
 ```
+### set config
+```bash
+nim-cli config list
+nim-cli set https://demo.nim.com basic
+nim-cli config list
+nim-cli config reset --force
+nim-cli config list
+```
 ### oauth login okta
 ```bash
 # export env vars

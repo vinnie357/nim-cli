@@ -2,7 +2,7 @@
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const axios = require("axios");
-
+const user = require('../user/user')
 //// variables
 // /swagger-ui/#/
 
@@ -51,8 +51,48 @@ const uriScan = {
 // console.log(uriAnalyze['analyze']);
 // console.log(uriScan['scan'])
 
+//https://medium.com/@nanovazquez/yargs-interactive-create-cli-tools-for-humans-and-non-humans-f9419f5cbd9e
 
 yargs(hideBin(process.argv))
+.command('config [action]', 'local config options', (yargs) => {
+  return yargs
+    .positional('action', {
+      describe: 'reset|list',
+      default: 'list'
+    })
+    .option('force', {
+      alias: 'f',
+      type: 'boolean',
+      description: 'Reset local config file',
+      default: false,
+      demandOption: true
+    })
+    }, (argv) => {
+      if( ! argv.force && argv.action == 'reset'){
+        console.log("reset requires --force")
+      }
+      if(argv.force && argv.action == 'reset'){
+        console.log("reseting");
+        user.resetConfig();
+      }
+      if (argv.action == 'list'){
+        user.listConfig();
+      }
+    })
+.command('set [target] [auth]', 'set default target', (yargs) => {
+  return yargs
+    .positional('target', {
+      describe: 'nim instance fqdn',
+      default: 'http://localhost:11000'
+    })
+    .positional('auth', {
+      describe: 'auth provider',
+      default: 'basic'
+    })
+    }, (argv) => {
+      item = {target: argv.target, auth: argv.auth};
+      user.store(item);
+    })
 .command('get [info] [type] [target]', 'get nim info', (yargs) => {
   return yargs
     .positional('info', {
