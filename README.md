@@ -19,6 +19,8 @@ f5-devops ➜ ~/workspace (main ✗) $ nim-cli --help
 nim-cli [command]
 
 Commands:
+  nim-cli config [action]             local config options
+  nim-cli set [target] [auth]         set default target
   nim-cli get [info] [type] [target]  get nim info
   nim-cli list [type] [target]        list instances
 
